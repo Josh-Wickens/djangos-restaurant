@@ -4,14 +4,19 @@
 
 body {
     font-family: 'Inconsolata', monospace, sans-serif;
+    color: whitesmoke;
     background-color: black;
 }
 
 h1, h2, h3 {
     font-family: 'Karla', sans-serif;
+    color: whitesmoke;
+    -webkit-text-stroke: 0.5px gold;
 }
 
 .logo {
     font-family: 'Parisienne', cursive;
+    color: whitesmoke;
+    -webkit-text-stroke: 0.5px gold;
 }
 
