@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Karla&family=Parisienne&display=swap');
 
 html {
@@ -8,13 +7,18 @@ html {
 body {
     font-family: 'Inconsolata', monospace, sans-serif;
     color: whitesmoke;
-    background-color: black;
+    background-image: url(https://res.cloudinary.com/wickster/image/upload/v1665611710/site-background_qbeggd.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Karla', sans-serif;
     color: whitesmoke;
     -webkit-text-stroke: 0.5px gold;
@@ -28,8 +32,7 @@ h1, h2, h3 {
 
 footer {
     margin-top: auto;
-    background-color: lightgray;
-    min-height: 10%;
+    background-color: #343A40;
 }
 
 .carousel-item {
@@ -37,4 +40,3 @@ footer {
     background-color: #777;
 
 }
-
