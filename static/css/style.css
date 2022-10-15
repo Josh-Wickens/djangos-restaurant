@@ -42,6 +42,13 @@ footer {
     background-color: #343A40;
 }
 
+
+
+
+
+
+
+
 #myCarouselcarouselExampleControls {
     margin: auto;
     display: flex;
@@ -51,7 +58,7 @@ footer {
 
 .carousel-inner {
     margin: auto;
-    width: fit-content;
+    width: min-content;
     max-width: 90%;
     border: solid 2px gold;
 }
@@ -59,9 +66,14 @@ footer {
 .carousel-item {
     height: 25rem;
     width: 50rem;
-    background-color: #777;
 
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+}
+
 
 img {
     height: -webkit-fill-available;
@@ -75,4 +87,8 @@ a:visited {
 a {
     text-decoration: none;
     color: inherit
+}
+
+.info {
+    background-image: radial-gradient(whitesmoke, white, rgba(255, 0, 0, 0))
 }
