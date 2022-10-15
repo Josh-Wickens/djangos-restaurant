@@ -6,7 +6,7 @@ html {
 
 body {
     font-family: 'Inconsolata', monospace, sans-serif;
-    color: whitesmoke;
+    color: black;
     background-image: url(https://res.cloudinary.com/wickster/image/upload/v1665611710/site-background_qbeggd.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -16,11 +16,16 @@ body {
     flex-direction: column;
 }
 
+p {
+    font-weight: 600;
+    font-size: 120%;
+}
+
 h1,
 h2,
 h3 {
     font-family: 'Karla', sans-serif;
-    color: whitesmoke;
+    color: black;
     -webkit-text-stroke: 0.5px gold;
 }
 
@@ -35,8 +40,31 @@ footer {
     background-color: #343A40;
 }
 
+#myCarousel {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+
+}
+
+.carousel-inner {
+    margin: auto;
+    width: auto;
+}
+
 .carousel-item {
     height: 25rem;
+    width: 50rem;
     background-color: #777;
 
+}
+
+a:visited { 
+    text-decoration: none; 
+   }
+
+a {
+    text-decoration: none;
+    color: inherit
 }
