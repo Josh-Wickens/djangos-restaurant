@@ -40,6 +40,7 @@ h3 {
 footer {
     margin-top: auto;
     background-color: #343A40;
+    border-top: solid 2px gold;
 }
 
 
@@ -91,4 +92,8 @@ a {
 
 .info {
     background-image: radial-gradient(whitesmoke, white, rgba(255, 0, 0, 0))
+}
+
+.navbar {
+    border-bottom: solid 2px gold;
 }
