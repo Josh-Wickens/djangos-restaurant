@@ -20,7 +20,9 @@ class FoodMenu(models.Model):
         return self.name
 
 
-# class Tables(models.Model):
-#     table_number = models.IntegerField(unique=True)
-#     seats = models.IntegerField(max_length=6)
-#     window = models.BooleanField()
+class Tables(models.Model):
+    table_number = models.IntegerField(unique=True)
+    seats = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.table_number
