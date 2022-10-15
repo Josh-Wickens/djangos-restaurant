@@ -42,7 +42,7 @@ footer {
     background-color: #343A40;
 }
 
-#myCarousel {
+#myCarouselcarouselExampleControls {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,8 @@ footer {
 
 .carousel-inner {
     margin: auto;
-    width: auto;
+    width: fit-content;
+    max-width: 90%;
     border: solid 2px gold;
 }
 
