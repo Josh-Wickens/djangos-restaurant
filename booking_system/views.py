@@ -5,10 +5,10 @@ from .models import FoodMenu
 # Create your views here.
 
 
-# class DishList(generic.ListView):
-#     model = FoodMenu
-#     queryset = FoodMenu.objects
-#     template_name = 'menu.html'
+class DishList(generic.ListView):
+    model = FoodMenu
+    queryset = FoodMenu.objects.all()
+    template_name = 'menu.html'
 
 
 def FoodMenu(request):

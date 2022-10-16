@@ -7,8 +7,8 @@ Djangos Menu
 {% block content %}
     <h1>This is the Menu</h1>
     <p>Welcome to Djangos Menu. Please take a look</p>
-
-    {% for dish in dishes %}
-    <p> {{ dish.name }} </p>
+    {% }
+    {% for dish in object_list %}
+    <p> {{ dish.name }} {{ dish.food_type }} hi</p>
     {% endfor %}
 {% endblock %}

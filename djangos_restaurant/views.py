@@ -5,10 +5,6 @@ def home(request):
     # return HttpResponse('Home')
     return render(request, 'index.html')
 
-def menu(request):
-    #return HttpResponse('Menu')
-    return render(request, 'menu.html')
-
 def book_table(request):
     #return HttpResponse('Book a table')
     return render(request, 'book_table.html')
