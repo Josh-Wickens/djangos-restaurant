@@ -25,10 +25,13 @@ h1,
 h2,
 h3 {
     font-family: 'Karla', sans-serif;
-    font-size: 3.5vw;
     color: black;
     -webkit-text-stroke: 0.2px gold;
 
+}
+
+h1 {
+    font-size: 3.5vw;
 }
 
 .logo {
@@ -91,9 +94,15 @@ a {
 }
 
 .info {
-    background-image: radial-gradient(whitesmoke, white, rgba(255, 0, 0, 0))
+    background-image: radial-gradient(whitesmoke, whitesmoke, rgba(255, 0, 0, 0));
+    border: groove black 2px;
+    
 }
 
 .navbar {
     border-bottom: solid 2px gold;
+}
+
+.vegan, .vegetarian {
+    color: green;
 }

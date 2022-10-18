@@ -7,8 +7,46 @@ Djangos Menu
 {% block content %}
     <h1>This is the Menu</h1>
     <p>Welcome to Djangos Menu. Please take a look</p>
-    {% }
+<div class="container menu-container info">
+    <table style="width:100%">
+        <tr>
+          <th class="justify-content-center"><h2> STARTERS </h2></th>
+        </tr>
+        
     {% for dish in object_list %}
-    <p> {{ dish.name }} {{ dish.food_type }} hi</p>
+    {% if dish.food_type == "Starter" %}
+    <tr>
+        <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+        <td>£{{ dish.price }}</td>
+    </tr>
+    {% endif %}
     {% endfor %}
+
+    <tr>
+        <th class="justify-content-center"><h2> MAINS </h2></th>
+      </tr>
+
+    {% for dish in object_list %}
+    {% if dish.food_type == "Mains" %}
+    <tr>
+        <td><strong>{{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+        <td>£{{ dish.price }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+    <tr>
+        <th class="justify-content-center"><h2> DESERTS </h2></th>
+      </tr>
+      
+  {% for dish in object_list %}
+  {% if dish.food_type == "Dessert" %}
+  <tr>
+      <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+      <td>£{{ dish.price }}</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+    </table>
+</div>
 {% endblock %}
