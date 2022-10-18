@@ -5,48 +5,68 @@ Djangos Menu
 {% endblock %}
 
 {% block content %}
-    <h1>This is the Menu</h1>
-    <p>Welcome to Djangos Menu. Please take a look</p>
-<div class="container menu-container info">
+<div>
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+        <h1>Welcome to Djangos Restaurant</h1>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+        <p><strong>Meals suitable for Vegetarian are labelled with a <span class="vegetarian">V</span> and all meals suitable
+            for
+            Vegans are labelled with a <span class="vegan">VG</span>.</strong></p>
+    </div>
+</div>
+<div class="container menu-container info mb-4">
     <table style="width:100%">
         <tr>
-          <th class="justify-content-center"><h2> STARTERS </h2></th>
+            <th class="justify-content-center">
+                <h2> STARTERS </h2>
+            </th>
         </tr>
-        
-    {% for dish in object_list %}
-    {% if dish.food_type == "Starter" %}
-    <tr>
-        <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
-        <td>£{{ dish.price }}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
 
-    <tr>
-        <th class="justify-content-center"><h2> MAINS </h2></th>
-      </tr>
+        {% for dish in object_list %}
+        {% if dish.food_type == "Starter" %}
+        <tr>
+            <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span
+                        class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span
+                        class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+            <td><strong>£{{ dish.price }}</strong></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
 
-    {% for dish in object_list %}
-    {% if dish.food_type == "Mains" %}
-    <tr>
-        <td><strong>{{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
-        <td>£{{ dish.price }}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
+        <tr>
+            <th class="justify-content-center">
+                <h2> MAINS </h2>
+            </th>
+        </tr>
 
-    <tr>
-        <th class="justify-content-center"><h2> DESERTS </h2></th>
-      </tr>
-      
-  {% for dish in object_list %}
-  {% if dish.food_type == "Dessert" %}
-  <tr>
-      <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
-      <td>£{{ dish.price }}</td>
-  </tr>
-  {% endif %}
-  {% endfor %}
+        {% for dish in object_list %}
+        {% if dish.food_type == "Mains" %}
+        <tr>
+            <td><strong>{{ dish.name }}, {% if dish.vegetarian == True %} <span
+                        class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span
+                        class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+            <td><strong>£{{ dish.price }}</strong></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        <tr>
+            <th class="justify-content-center">
+                <h2> DESERTS </h2>
+            </th>
+        </tr>
+
+        {% for dish in object_list %}
+        {% if dish.food_type == "Dessert" %}
+        <tr>
+            <td><strong> {{ dish.name }}, {% if dish.vegetarian == True %} <span
+                        class="vegetarian">V</span>{% endif %}{% if dish.vegan == True %} <span
+                        class="vegan">VG</span>{% endif %}</strong> <i>{{ dish.description }}</i></td>
+            <td><strong>£{{ dish.price }}</strong></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
     </table>
 </div>
 {% endblock %}
