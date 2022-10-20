@@ -27,4 +27,5 @@ urlpatterns = [
     path('my_bookings/', views.my_bookings, name="bookings"),
     path('', views.home, name="home"),
     path('login/', RedirectView.as_view(url='login.html'), name='login'),
+    path('accounts/', include('allauth.urls')),
 ]
