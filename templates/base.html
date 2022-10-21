@@ -33,11 +33,13 @@
         <a class="nav-item nav-link" href="{% url 'menu' %}">Menu</a>
         <a class="nav-item nav-link" href="{% url 'book' %}">Book Table</a>
         <a class="nav-item nav-link" href="{% url 'bookings' %}">My Bookings</a>
+        
         {% if user.is_authenticated %}
         <a class="nav-item nav-link" href="{% url 'account_logout' %}">Logout</a>
         {% else %}
         <a class="nav-item nav-link" href="{% url 'account_signup' %}">Register</a>
         <a class="nav-item nav-link" href="{% url 'account_login' %}">Login</a>
+      
         {% endif %}
       </div>
     </div>
@@ -57,7 +59,7 @@
 
       <section class="mb-1">
 
-       <p>Telephone: 0161 999 6666 / Email: <a href="mailto:djangos@food.co.uk"><span class="email-link"> djangos@food.co.uk </span></a> <br>Djangos Liverpool Road, Manchester, M3 4JW</p>
+       <p>Telephone: 0161 999 6666 / Email: <a href="mailto:djangos@food.co.uk"><span class="email-link"> djangos@food.co.uk </span></a> <br>Djangos, Liverpool Road, Manchester, M3 4JW</p>
         <!-- Copyright -->
         <div class="text-center text-white p-1">
           © 2022 Copyright:
