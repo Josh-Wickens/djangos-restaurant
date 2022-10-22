@@ -26,3 +26,16 @@ class Tables(models.Model):
 
     def __str__(self):
         return self.table_number
+
+
+class Reservation(models.Model):
+    reservation_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=40)
+    email = models.EmailField()
+    phone = models.IntegerField()
+    number_of_people = models.IntegerField()
+    date = models.DateField()
+    time = models.TimeField()
+
+    def __str__(self):
+        return self.name

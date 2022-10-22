@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import FoodMenu
+from .models import FoodMenu, Reservation
 
 # Create your views here.
 
@@ -22,3 +22,6 @@ def FoodMenu(request):
         'vegan': vegan,
     }
     
+
+def book_table(request):
+    pass
