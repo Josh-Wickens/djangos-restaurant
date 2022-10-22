@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import FoodMenu, Reservation
+from .forms import ReserveTableForm
 
 # Create your views here.
 
@@ -24,4 +25,14 @@ def FoodMenu(request):
     
 
 def book_table(request):
-    pass
+    reserve_form = ReserveTableForm()
+
+    if request.method == 'POST' :
+        reserve_form = ReserveTableForm(request.method)
+
+        if reserve_form.is_valid():
+            reserve_form.save()
+    
+    context = {'form' : reserve_form}
+
+    return render(request, 'book_table.html', context)

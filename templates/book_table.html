@@ -7,6 +7,11 @@ Djangos Book Table
 {% block content %}
 <h1>This is the Book Table page</h1>
 <p>Welcome to Djangos book a table</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+</form>
     
 {% endblock %}
     
