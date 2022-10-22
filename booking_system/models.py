@@ -7,6 +7,18 @@ FOOD_TYPES = (
           ('Dessert', 'Dessert'),
 )
 
+TIME_CHOICES = (
+    ("18:00", "19:30"),
+    ("18:30", "20:00"),
+    ("19:00", "20:30"),
+    ("19:30", "21:00"),
+    ("20:00", "21:30"),
+    ("20:30", "22:00"),
+    ("21:00", "22:30"),
+    ("21:30", "23:00"),
+    ("22:00", "23:30"),
+)
+
 
 class FoodMenu(models.Model):
     name = models.CharField(max_length=40, null=False, blank=False)
@@ -35,7 +47,7 @@ class Reservation(models.Model):
     phone = models.IntegerField()
     number_of_people = models.IntegerField()
     date = models.DateField()
-    time = models.TimeField()
+    time = models.CharField(max_length=10, choices=(TIME_CHOICES)
 
     def __str__(self):
-        return self.name
+        return self.reservation_id

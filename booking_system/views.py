@@ -27,7 +27,7 @@ def FoodMenu(request):
 def book_table(request):
     reserve_form = ReserveTableForm()
 
-    if request.method == 'POST' :
+    if request.method == 'POST':
         reserve_form = ReserveTableForm(request.method)
 
         if reserve_form.is_valid():
