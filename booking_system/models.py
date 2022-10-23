@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 # Create your models here.
 FOOD_TYPES = (
@@ -45,9 +47,15 @@ class Reservation(models.Model):
     name = models.CharField(max_length=40)
     email = models.EmailField()
     phone = models.IntegerField()
-    number_of_people = models.IntegerField()
+    number_of_people = models.IntegerField(
+        default=1,
+        validators=[
+            MaxValueValidator(8),
+            MinValueValidator(1)
+        ]
+     )
     date = models.DateField()
-    time = models.CharField(max_length=10, choices=(TIME_CHOICES)
+    time = models.CharField(max_length=10, choices=(TIME_CHOICES))
 
     def __str__(self):
         return self.reservation_id

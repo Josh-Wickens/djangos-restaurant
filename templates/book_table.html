@@ -8,10 +8,15 @@ Djangos Book Table
 <h1>This is the Book Table page</h1>
 <p>Welcome to Djangos book a table</p>
 
+<div class="container info m-5 p-5 d-flex align-items-center justify-content-center">
 <form action="" method="POST">
     {% csrf_token %}
-    {{form}}
+    {{form.as_p}}
+
+    <button type="submit" class="btn-lg btn-outline-dark font-weight-bold">Book</button>
+
 </form>
+</div>
     
 {% endblock %}
     

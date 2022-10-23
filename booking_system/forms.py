@@ -1,5 +1,4 @@
 from django import forms
-from django import models
 from .models import Reservation
 
 
