@@ -1,5 +1,8 @@
 from django.db import models
+import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
+
+
 
 
 # Create your models here.
@@ -10,15 +13,15 @@ FOOD_TYPES = (
 )
 
 TIME_CHOICES = (
-    ("18:00", "19:30"),
-    ("18:30", "20:00"),
-    ("19:00", "20:30"),
-    ("19:30", "21:00"),
-    ("20:00", "21:30"),
-    ("20:30", "22:00"),
-    ("21:00", "22:30"),
-    ("21:30", "23:00"),
-    ("22:00", "23:30"),
+    ("18:00 - 19:30", "18:00 - 19:30"),
+    ("18:30 - 20:00", "18:30 - 20:00"),
+    ("19:00 - 20:30", "19:00 - 20:30"),
+    ("19:30 - 21:00", "19:30 - 21:00"),
+    ("20:00 - 21:30", "20:00 - 21:30"),
+    ("20:30 - 22:00", "20:30 - 22:00"),
+    ("21:00 - 22:30", "21:00 - 22:30"),
+    ("21:30 - 23:00", "21:30 - 23:00"),
+    ("22:00 - 23:30", "22:00 - 23:30"),
 )
 
 
@@ -47,15 +50,15 @@ class Reservation(models.Model):
     name = models.CharField(max_length=40)
     email = models.EmailField()
     phone = models.IntegerField()
-    number_of_people = models.IntegerField(
+    guests = models.IntegerField(
         default=1,
         validators=[
             MaxValueValidator(8),
             MinValueValidator(1)
         ]
      )
-    date = models.DateField()
-    time = models.CharField(max_length=10, choices=(TIME_CHOICES))
+    date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
+    time = models.CharField(max_length=20, choices=(TIME_CHOICES))
 
     def __str__(self):
-        return self.reservation_id
+        return f"Booking reference - {self.reservation_id} for {self.name}"
