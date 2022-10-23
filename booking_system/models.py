@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -37,23 +38,24 @@ class FoodMenu(models.Model):
         return self.name
 
 
-class Tables(models.Model):
+class Table(models.Model):
     table_number = models.IntegerField(unique=True)
     seats = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.table_number
+        return f" Table No. - {self.table_number}"
 
 
 class Reservation(models.Model):
     reservation_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     name = models.CharField(max_length=40)
     email = models.EmailField()
     phone = models.IntegerField()
     guests = models.IntegerField(
         default=1,
         validators=[
-            MaxValueValidator(8),
+            MaxValueValidator(4),
             MinValueValidator(1)
         ]
      )
@@ -61,4 +63,4 @@ class Reservation(models.Model):
     time = models.CharField(max_length=20, choices=(TIME_CHOICES))
 
     def __str__(self):
-        return f"Booking reference - {self.reservation_id} for {self.name}"
+        return f"Ref No. {self.reservation_id} - {self.name}"

@@ -31,7 +31,9 @@ def book_table(request):
         reserve_form = ReserveTableForm(request.POST)
 
         if reserve_form.is_valid():
-            reserve_form.save()
+            booking = reserve_form.save(commit=False)
+            booking.user = request.user
+            booking.save()
             return render(request, 'my_bookings.html')
             
     context = {'form': reserve_form}
