@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from datetime import timedelta
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -7,22 +8,17 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
+
 FOOD_TYPES = (
           ('Starter', 'Starter'),
           ('Mains', 'Mains'),
           ('Dessert', 'Dessert'),
 )
 
-TIME_CHOICES = (
-    ("18:00 - 19:30", "18:00 - 19:30"),
-    ("18:30 - 20:00", "18:30 - 20:00"),
-    ("19:00 - 20:30", "19:00 - 20:30"),
-    ("19:30 - 21:00", "19:30 - 21:00"),
-    ("20:00 - 21:30", "20:00 - 21:30"),
-    ("20:30 - 22:00", "20:30 - 22:00"),
-    ("21:00 - 22:30", "21:00 - 22:30"),
-    ("21:30 - 23:00", "21:30 - 23:00"),
-    ("22:00 - 23:30", "22:00 - 23:30"),
+STATUS_CHOICES = (
+    ('pending', 'pending'),
+    ('confirmed', 'Confirmed'),
+    ('cancelled', 'cancelled'),
 )
 
 
@@ -57,10 +53,40 @@ class Reservation(models.Model):
         validators=[
             MaxValueValidator(4),
             MinValueValidator(1)
-        ]
-     )
-    date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
-    time = models.CharField(max_length=20, choices=(TIME_CHOICES))
-
+        ])
+    date = models.DateTimeField()
+    check_in = models.TimeField(default=datetime.time(18, 00))
+    pending = "pending"
+    confirmed = "confirmed"
+    cancelled = "cancelled"
+    status_choices = ((pending, "pending"), (confirmed, "confirmed"))
+    status = models.CharField(max_length=20,  choices=STATUS_CHOICES, default=pending)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None)
+    
     def __str__(self):
         return f"Ref No. {self.reservation_id} - {self.name}"
+
+
+
+# check_out = models.TimeField()
+
+
+
+
+    
+    
+    # date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
+    # time = models.CharField(max_length=20, choices=(TIME_CHOICES))
+
+
+# TIME_CHOICES = (
+#     ("18:00", "18:00"),
+#     ("18:30", "18:30 - 20:00"),
+#     ("19:00", "19:00 - 20:30"),
+#     ("19:30 - 21:00", "19:30 - 21:00"),
+#     ("20:00 - 21:30", "20:00 - 21:30"),
+#     ("20:30 - 22:00", "20:30 - 22:00"),
+#     ("21:00 - 22:30", "21:00 - 22:30"),
+#     ("21:30 - 23:00", "21:30 - 23:00"),
+#     ("22:00 - 23:30", "22:00 - 23:30"),
+# )

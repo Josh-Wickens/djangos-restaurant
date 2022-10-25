@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import FoodMenu, Reservation
 from .forms import ReserveTableForm
+from datetime import timedelta
 
 # Create your views here.
 
@@ -24,6 +25,19 @@ def FoodMenu(request):
     }
     
 
+# class check_reservation(Reservation):
+#     for booking in Reservation:
+#         for date in booking:
+            
+#             def remove_times(date):
+#                 booking.date.time.remove
+    
+
+
+
+
+
+
 def book_table(request):
     reserve_form = ReserveTableForm()
 
@@ -34,8 +48,13 @@ def book_table(request):
             booking = reserve_form.save(commit=False)
             booking.user = request.user
             booking.save()
-            return render(request, 'my_bookings.html')
+            return render(request, 'my_bookings.html')      
             
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
+
+
+
+    # calc_checkout = booking.check_in + timedelta(minutes=90)
+            # booking.check_out = calc_checkout
