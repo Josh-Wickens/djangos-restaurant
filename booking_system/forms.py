@@ -9,7 +9,7 @@ HOUR_CHOICES = [(datetime.time(hour=x), '{:02d}:00'.format(x)) for x in range(18
 class ReserveTableForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        exclude = ('user', 'status')
+        exclude = ('user', 'status', 'table')
         fields = '__all__'
         widgets = {
             'date': widgets.DateInput(attrs={'type': 'date'}),

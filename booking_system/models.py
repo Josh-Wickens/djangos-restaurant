@@ -61,7 +61,7 @@ class Reservation(models.Model):
     cancelled = "cancelled"
     status_choices = ((pending, "pending"), (confirmed, "confirmed"))
     status = models.CharField(max_length=20,  choices=STATUS_CHOICES, default=pending)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None, null=True)
     
     def __str__(self):
         return f"Ref No. {self.reservation_id} - {self.name}"

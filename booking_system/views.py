@@ -34,7 +34,14 @@ def FoodMenu(request):
     
 
 
+def check_availablity(requested_date, requested_time):
+    no_tables_booked = len(Reservation.objects.filter(
+        check_in==requested_time,
+        date=requested_date, status="confirmed"))
 
+    # Return number of tables
+    # return no_tables_booked
+    print(check_availablity())
 
 
 
@@ -53,6 +60,9 @@ def book_table(request):
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
+
+
+
 
 
 
