@@ -63,11 +63,13 @@ def book_table(request):
                 date=booking.date, status="confirmed"))
 
             if no_tables_booked >= 10:
-                print(no_tables_booked)
+                messages.error(request, "Sorry there are no tables available at this time.")
+
             else:
                 booking.user = request.user
                 booking.save()
-                return render(request, 'my_bookings.html')      
+                return render(request, 'my_bookings.html') 
+                messages.success(request, "Sorry no tables available at this time and day.")     
             
     context = {'form': reserve_form}
 
