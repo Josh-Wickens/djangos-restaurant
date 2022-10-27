@@ -14,7 +14,7 @@ def book_table(request):
     return render(request, 'book_table.html')
 
 
-@login_required()
-def my_bookings(request):
-    # return HttpResponse('My Bookings')
-    return render(request, 'my_bookings.html')
+# @login_required()
+# def my_bookings(request):
+#     # return HttpResponse('My Bookings')
+#     return render(request, 'my_bookings.html')

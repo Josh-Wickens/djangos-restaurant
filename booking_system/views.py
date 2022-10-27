@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import FoodMenu, Reservation
+from .models import FoodMenu, Reservation, Table
 from .forms import ReserveTableForm
 from datetime import timedelta
 from django.contrib import messages
@@ -14,6 +14,24 @@ class DishList(generic.ListView):
     template_name = 'menu.html'
 
 
+class BookingList(generic.ListView):
+    # model = Reservation
+    queryset = Reservation.objects.all()
+    template_name = 'my_bookings.html'
+
+    # def get_queryset(self):
+    #     queryset = super(BookingList, self).get_queryset() 
+    #     return queryset.filter(user=self.kwargs['user'])
+
+def booking_list(request):
+    reservations = Reservation.objects.filter(user=request.user)
+    context = {
+        'bookings': reservations
+    }
+
+    return render(request, "my_bookings.html", context)
+
+
 def FoodMenu(request):
     dishes = FoodMenu.objects.all().order_by('food_type')
     context = {
@@ -24,14 +42,6 @@ def FoodMenu(request):
         'vegetarian': vegetarian,
         'vegan': vegan,
     }
-    
-
-# class check_reservation(Reservation):
-#     for booking in Reservation:
-#         for date in booking:
-            
-#             def remove_times(date):
-#                 booking.date.time.remove
     
 
 
@@ -69,16 +79,9 @@ def book_table(request):
                 booking.user = request.user
                 booking.save()
                 return render(request, 'my_bookings.html') 
-                messages.success(request, "Sorry no tables available at this time and day.")     
+                # messages.success(request, "Sorry no tables available at this time and day.")     
             
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
 
-
-
-
-
-
-    # calc_checkout = booking.check_in + timedelta(minutes=90)
-            # booking.check_out = calc_checkout

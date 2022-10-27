@@ -5,10 +5,28 @@ My Djangos Bookings
 {% endblock %}
 
 {% block content %}
-<h1>This is My Bookings</h1>
-<p>Welcome to Djangos My bookings page</p>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Booking Ref</th>
+            <th scope="col">Date</th>
+            <th scope="col">time</th>
+            <th scope="col">Booking Ref</th>
+            <th scope="col">People</th>
+            <th scope="col">Status</th>
+            <th scope="col">Amend</th>
+            <th scope="col">Cancel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th scope="row">1</th>
+        <tr>
+            {% for booking in bookings %} <td><h3>{{ booking.name }}</h3> </td>
+            {% endfor %}
 
-    
+        </tr>
+    </tbody>
+</table>
+
 {% endblock %}
-
-    
