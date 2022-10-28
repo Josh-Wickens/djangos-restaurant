@@ -97,5 +97,12 @@ def edit_booking(request, reservation_id):
     #         booking.save()
     reserve_form = ReserveTableForm(instance=booking)
     context = {'form': reserve_form}
-    return render(request, 'booking_system/edit_booking.html', context)
+    return render(request, 'bookings/edit', context)
+
+def delete_booking(request, reservation_id):
+    booking = get_object_or_404(Reservation, reservation_id=reservation_id)
+    booking.delete()
+    return redirect('my_bookings')
+    
+
 

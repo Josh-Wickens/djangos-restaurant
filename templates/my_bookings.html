@@ -39,7 +39,7 @@ My Bookings
             <td>{{booking.guests}} </td>
             <td>{{booking.status}} </td>
             <td><a href="{% url 'edit' booking.reservation_id %}"><button class="btn btn-warning">Amend</button></a></td>
-            <td><button class="btn btn-danger">Cancel</button></td>
+            <td><a href="{% url 'delete' booking.reservation_id %}"><button class="btn btn-danger">Cancel</button></a></td>
         </tr>
 
         {% endfor %}
