@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Djangos Book Table
+Amend Booking
 {% endblock %}
 
 {% block content %}
 
 <div>
     <div class="col-md-12 d-flex justify-content-center align-items-center">
-        <h1>Book a Table</h1>
+        <h1>Amend Booking</h1>
     </div>
     <div class="col-md-12 d-flex justify-content-center align-items-center text-center subtitle p-5">
         <p><strong>All bookings are for 1 Hour and 30 minutes and maximum table of 4 people. If you need a longer booking or looking for bookings of more than 4 people, please call the restaurant.</strong></p>
@@ -16,7 +16,7 @@ Djangos Book Table
 </div>
 <div class="d-flex justify-content-center">
 <div class="container info m-2 p-5 d-flex text-center justify-content-center">
-<form action="" method="POST">
+<form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     {% if messages %}
@@ -28,7 +28,7 @@ Djangos Book Table
     {% endif %}
 
 
-    <button type="submit" class="btn-lg btn-outline-dark font-weight-bold">Book</button>
+    <button type="submit" class="btn-lg btn-outline-dark font-weight-bold">Update Booking</button>
 
 </form>
 </div>

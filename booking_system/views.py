@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import FoodMenu, Reservation, Table
 from .forms import ReserveTableForm
@@ -83,13 +83,19 @@ def book_table(request):
                 messages.success(request, "Your booking has been confirmed.") 
                 return redirect('bookings') 
                     
-            
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
 
-def increment_number(numbercount):
-    numbercount = 0
-    numbercount += 1
-    return numbercount
+def edit_booking(request, reservation_id):
+    booking = get_object_or_404(Reservation, reservation_id=reservation_id)
+    # if request.method == 'POST':
+    #     reserve_form = ReserveTableForm(request.POST, instance=booking)
+
+    #     if reserve_form.is_valid():
+    #         booking = reserve_form.save(commit=False)
+    #         booking.save()
+    reserve_form = ReserveTableForm(instance=booking)
+    context = {'form': reserve_form}
+    return render(request, 'booking_system/edit_booking.html', context)
 
