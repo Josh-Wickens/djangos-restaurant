@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import FoodMenu, Reservation, Table
 from .forms import ReserveTableForm
 from datetime import timedelta
 from django.contrib import messages
+
 
 # Create your views here.
 
@@ -77,9 +78,11 @@ def book_table(request):
 
             else:
                 booking.user = request.user
+                booking.status = "confirmed"
                 booking.save()
-                return render(request, 'my_bookings.html') 
-                # messages.success(request, "Sorry no tables available at this time and day.")     
+                messages.success(request, "Your booking has been confirmed.") 
+                return redirect('bookings') 
+                    
             
     context = {'form': reserve_form}
 

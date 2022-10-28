@@ -6,6 +6,14 @@ My Djangos Bookings
 
 {% block content %}
 
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
 <table class="table table-striped table-dark">
     <thead>
         <tr>
@@ -13,7 +21,6 @@ My Djangos Bookings
             <th scope="col">Booking Ref</th>
             <th scope="col">Date</th>
             <th scope="col">time</th>
-            <th scope="col">Booking Ref</th>
             <th scope="col">People</th>
             <th scope="col">Status</th>
             <th scope="col">Amend</th>
@@ -24,7 +31,19 @@ My Djangos Bookings
         <tr>
         <th scope="row">1</th>
         {% for booking in bookings %}
-             <td>{{booking.name}} </td>
+             <td>{{booking.reservation_id}} </td>
+             </tr>
+             <td>{{booking.date}} </td>
+             </tr>
+             <td>{{booking.check_in}} </td>
+             </tr>
+             <td>{{booking.reservation_id}} </td>
+             </tr>
+             <td>{{booking.reservation_id}} </td>
+             </tr>
+             <td>{{booking.reservation_id}} </td>
+             </tr>
+             <td>{{booking.reservation_id}} </td>
              </tr>
              
             {% endfor %}
