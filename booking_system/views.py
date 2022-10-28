@@ -88,3 +88,8 @@ def book_table(request):
 
     return render(request, 'book_table.html', context)
 
+def increment_number(numbercount):
+    numbercount = 0
+    numbercount += 1
+    return numbercount
+
