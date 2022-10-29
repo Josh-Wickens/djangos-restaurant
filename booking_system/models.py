@@ -4,9 +4,6 @@ from datetime import timedelta
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-
-
-
 # Create your models here.
 
 FOOD_TYPES = (
@@ -54,7 +51,7 @@ class Reservation(models.Model):
             MaxValueValidator(4),
             MinValueValidator(1)
         ])
-    date = models.DateTimeField()
+    date = models.DateField()
     check_in = models.TimeField(default=datetime.time(18, 00))
     pending = "pending"
     confirmed = "confirmed"
@@ -68,28 +65,3 @@ class Reservation(models.Model):
 
     class Meta:
         ordering = ['date']
-
-
-
-# check_out = models.TimeField()
-
-
-
-
-    
-    
-    # date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
-    # time = models.CharField(max_length=20, choices=(TIME_CHOICES))
-
-
-# TIME_CHOICES = (
-#     ("18:00", "18:00"),
-#     ("18:30", "18:30 - 20:00"),
-#     ("19:00", "19:00 - 20:30"),
-#     ("19:30 - 21:00", "19:30 - 21:00"),
-#     ("20:00 - 21:30", "20:00 - 21:30"),
-#     ("20:30 - 22:00", "20:30 - 22:00"),
-#     ("21:00 - 22:30", "21:00 - 22:30"),
-#     ("21:30 - 23:00", "21:30 - 23:00"),
-#     ("22:00 - 23:30", "22:00 - 23:30"),
-# )

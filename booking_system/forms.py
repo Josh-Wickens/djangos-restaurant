@@ -3,10 +3,16 @@ from django.forms import widgets
 from django.conf import settings
 from .models import Reservation
 import datetime
+from datetime import date
 
 HOUR_CHOICES = [(datetime.time(hour=x), '{:02d}:00'.format(x)) for x in range(18, 24)]
 
 class ReserveTableForm(forms.ModelForm):
+    # def check_date(self):
+    #     if date < datetime.date.today():
+    #         raise ValidationError(self.error_messages['Date cannot be in the past'], code='Date cannot be in the past')
+    #     return date
+
     class Meta:
         model = Reservation
         exclude = ('user', 'status', 'table')
@@ -17,3 +23,9 @@ class ReserveTableForm(forms.ModelForm):
             # 'check_out': datetime.timedelta(minutes=90)
             # 'check_in': forms.TimeInput(attrs={'type': 'time'})
         }
+
+    def clean_date(self):
+        date = self.cleaned_data['date']
+        if date < date.today():
+            raise forms.ValidationError("The date cannot be in the past!")
+        return date

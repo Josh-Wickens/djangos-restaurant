@@ -25,9 +25,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('bookings/', include('booking_system.urls')),
     path('', views.home, name="home"),
-
-    # path('home/', views.home, name="home"),
-    # path('menu/', include('booking_system.urls')),
-    # path('book/', include('booking_system.urls')),
-    # path('my_bookings/', views.my_bookings, name="bookings"),
 ]

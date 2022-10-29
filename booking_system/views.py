@@ -20,9 +20,6 @@ class BookingList(generic.ListView):
     queryset = Reservation.objects.all()
     template_name = 'my_bookings.html'
 
-    # def get_queryset(self):
-    #     queryset = super(BookingList, self).get_queryset() 
-    #     return queryset.filter(user=self.kwargs['user'])
 
 def booking_list(request):
     reservations = Reservation.objects.filter(user=request.user)
@@ -43,21 +40,6 @@ def FoodMenu(request):
         'vegetarian': vegetarian,
         'vegan': vegan,
     }
-    
-
-
-# def check_availablity(requested_date, requested_time):
-#     no_tables_booked = len(Reservation.objects.filter(
-#         check_in=requested_time,
-#         date=requested_date, status="confirmed"))
-    
-#     return no_tables_booked
-    
-    # if no_tables_booked >= 10:
-    #     print("too many tables")
-    # else:
-    #     print(no_tables_booked)
-
 
 
 def book_table(request):
@@ -115,5 +97,3 @@ def delete_booking(request, reservation_id):
     booking.delete()
     return redirect('bookings')
     
-
-
