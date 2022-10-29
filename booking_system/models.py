@@ -66,6 +66,9 @@ class Reservation(models.Model):
     def __str__(self):
         return f"Ref No. {self.reservation_id} - {self.name}"
 
+    class Meta:
+        ordering = ['date']
+
 
 
 # check_out = models.TimeField()

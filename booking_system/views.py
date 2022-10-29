@@ -68,7 +68,6 @@ def book_table(request):
 
         if reserve_form.is_valid():
             booking = reserve_form.save(commit=False)
-            # check_availablity(booking.date, booking.check_in)
             no_tables_booked = len(Reservation.objects.filter(
                 check_in=booking.check_in,
                 date=booking.date, status="confirmed"))
@@ -89,20 +88,32 @@ def book_table(request):
 
 def edit_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
-    # if request.method == 'POST':
-    #     reserve_form = ReserveTableForm(request.POST, instance=booking)
+    if request.method == 'POST':
+        reserve_form = ReserveTableForm(request.POST, instance=booking)
 
-    #     if reserve_form.is_valid():
-    #         booking = reserve_form.save(commit=False)
-    #         booking.save()
+        if reserve_form.is_valid():
+            booking = reserve_form.save(commit=False)
+            no_tables_booked = len(Reservation.objects.filter(
+                check_in=booking.check_in,
+                date=booking.date, status="confirmed"))
+
+            if no_tables_booked >= 10:
+                messages.error(request, "Sorry there are no tables available at this time.")
+
+            else:
+                booking.user = request.user
+                booking.status = "confirmed"
+                booking.save()
+                messages.success(request, "Your booking has been confirmed.") 
+                return redirect('bookings') 
     reserve_form = ReserveTableForm(instance=booking)
     context = {'form': reserve_form}
-    return render(request, 'bookings/edit', context)
+    return render(request, 'edit_booking.html', context)
 
 def delete_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
     booking.delete()
-    return redirect('my_bookings')
+    return redirect('my_bookings.html')
     
 
 
