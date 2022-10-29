@@ -17,18 +17,10 @@ class DishList(generic.ListView):
     template_name = 'menu.html'
 
 
-# class BookingList(generic.ListView):
-#     # model = Reservation
-#     queryset = Reservation.objects.filter(status="confirmed")
-#     template_name = 'my_bookings.html'
-    
-
-
-
 def booking_list(request):
     reservations = list(Reservation.objects.filter(user=request.user, status="confirmed"))
     today = date.today()
-    
+
     for index, reservation in enumerate(reservations):
         if reservation.date < today:
             reservation.status = 'expired'
@@ -78,6 +70,7 @@ def book_table(request):
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
+
 
 def edit_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
