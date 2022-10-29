@@ -39,7 +39,30 @@ My Bookings
             <td>{{booking.guests}} </td>
             <td>{{booking.status}} </td>
             <td><a href="{% url 'edit' booking.reservation_id %}"><button class="btn btn-warning">Amend</button></a></td>
-            <td><a href="{% url 'delete' booking.reservation_id %}"><button class="btn btn-danger">Cancel</button></a></td>
+            <td><a href="#myModal" class="trigger-btn btn btn-danger" data-toggle="modal">Cancel</a></td>
+            <div class="text-center">
+                <!-- Button HTML (to Trigger Modal) -->
+                <!-- <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Confirm Modal</a> -->
+            </div>
+            
+            <!-- Modal HTML -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Are you sure?</h4>	
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Do you really want to delete these records? This process cannot be undone.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-danger"><a href="{% url 'delete' booking.reservation_id %}" type="button">Delete</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
         </tr>
 
         {% endfor %}

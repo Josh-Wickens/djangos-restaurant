@@ -17,6 +17,10 @@ Djangos Book Table
 <div class="d-flex justify-content-center">
 <div class="container info m-2 p-5 d-flex text-center justify-content-center">
 <form action="" method="POST">
+    {% if user.is_authenticated %}
+    
+      
+        
     {% csrf_token %}
     {{form.as_p}}
     {% if messages %}
@@ -29,7 +33,13 @@ Djangos Book Table
 
 
     <button type="submit" class="btn-lg btn-outline-dark font-weight-bold">Book</button>
+    {% else %}
+    {% csrf_token %}
+    <h3>You must be logged in to book a table. If you don't have an account with us already, please Register. Otherwise please log in.</h3>
+    <a href="{% url 'account_signup' %}"><button class="btn-lg btn-outline-dark font-weight-bold">Login</button></a>
+    <a href="{% url 'account_login' %}"><button class="btn-lg btn-outline-dark font-weight-bold">Register</button></a>
 
+    {% endif %}
 </form>
 </div>
 </div>
