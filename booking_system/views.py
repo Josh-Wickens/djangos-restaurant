@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import FoodMenu, Reservation, Table
 from .forms import ReserveTableForm
+import datetime
+from datetime import date
 from datetime import timedelta
 from django.contrib import messages
 
@@ -15,14 +17,23 @@ class DishList(generic.ListView):
     template_name = 'menu.html'
 
 
-class BookingList(generic.ListView):
-    # model = Reservation
-    queryset = Reservation.objects.all()
-    template_name = 'my_bookings.html'
+# class BookingList(generic.ListView):
+#     # model = Reservation
+#     queryset = Reservation.objects.filter(status="confirmed")
+#     template_name = 'my_bookings.html'
+    
+
 
 
 def booking_list(request):
-    reservations = Reservation.objects.filter(user=request.user)
+    reservations = list(Reservation.objects.filter(user=request.user, status="confirmed"))
+    today = date.today()
+    
+    for index, reservation in enumerate(reservations):
+        if reservation.date < today:
+            reservation.status = 'expired'
+            reservation.save()
+            del reservations[index]
     context = {
         'bookings': reservations
     }
@@ -70,6 +81,7 @@ def book_table(request):
 
 def edit_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
+    today = date.today()
     if request.method == 'POST':
         reserve_form = ReserveTableForm(request.POST, instance=booking)
 
@@ -92,8 +104,8 @@ def edit_booking(request, reservation_id):
     context = {'form': reserve_form}
     return render(request, 'edit_booking.html', context)
 
+
 def delete_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
     booking.delete()
     return redirect('bookings')
-    

@@ -14,8 +14,8 @@ FOOD_TYPES = (
 
 STATUS_CHOICES = (
     ('pending', 'pending'),
-    ('confirmed', 'Confirmed'),
-    ('cancelled', 'cancelled'),
+    ('confirmed', 'confirmed'),
+    ('expired', 'expired'),
 )
 
 
@@ -55,7 +55,7 @@ class Reservation(models.Model):
     check_in = models.TimeField(default=datetime.time(18, 00))
     pending = "pending"
     confirmed = "confirmed"
-    cancelled = "cancelled"
+    expired = "expired"
     status_choices = ((pending, "pending"), (confirmed, "confirmed"))
     status = models.CharField(max_length=20,  choices=STATUS_CHOICES, default=pending)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None, null=True, blank=True)
