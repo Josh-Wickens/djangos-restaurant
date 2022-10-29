@@ -113,7 +113,7 @@ def edit_booking(request, reservation_id):
 def delete_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
     booking.delete()
-    return redirect('my_bookings.html')
+    return redirect('bookings')
     
 
 
