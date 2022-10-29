@@ -64,7 +64,7 @@ def book_table(request):
                 booking.user = request.user
                 booking.status = "confirmed"
                 booking.save()
-                messages.success(request, "Your booking has been confirmed.") 
+                messages.success(request, "Your booking for has been confirmed.") 
                 return redirect('bookings') 
                     
     context = {'form': reserve_form}
