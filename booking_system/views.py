@@ -64,9 +64,9 @@ def book_table(request):
                 booking.user = request.user
                 booking.status = "confirmed"
                 booking.save()
-                messages.success(request, "Your booking for has been confirmed.") 
-                return redirect('bookings') 
-                    
+                messages.success(request, "Your booking for has been confirmed.")
+                return redirect('bookings')
+
     context = {'form': reserve_form}
 
     return render(request, 'book_table.html', context)
@@ -91,8 +91,8 @@ def edit_booking(request, reservation_id):
                 booking.user = request.user
                 booking.status = "confirmed"
                 booking.save()
-                messages.success(request, "Your booking has been confirmed.") 
-                return redirect('bookings') 
+                messages.success(request, "Your booking has been confirmed.")
+                return redirect('bookings')
     reserve_form = ReserveTableForm(instance=booking)
     context = {'form': reserve_form}
     return render(request, 'edit_booking.html', context)

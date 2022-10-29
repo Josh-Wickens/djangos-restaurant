@@ -3,6 +3,7 @@ import datetime
 from datetime import timedelta
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -44,7 +45,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     name = models.CharField(max_length=40)
     email = models.EmailField()
-    phone = models.IntegerField()
+    phoneNumber = PhoneNumberField(null=False, blank=False, default="+44")
     guests = models.IntegerField(
         default=1,
         validators=[

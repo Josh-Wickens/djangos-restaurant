@@ -24,7 +24,3 @@ class ReserveTableForm(forms.ModelForm):
             'date': widgets.DateInput(attrs={'type': 'date'}),
             'check_in': forms.Select(choices=HOUR_CHOICES),
         }
-
-    
-
-        
