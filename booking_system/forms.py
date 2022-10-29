@@ -9,7 +9,7 @@ HOUR_CHOICES = [(datetime.time(hour=x), '{:02d}:00'.format(x)) for x in range(18
 
 
 class ReserveTableForm(forms.ModelForm):
-    
+
     def clean_date(self):
         date = self.cleaned_data['date']
         if date < date.today():
