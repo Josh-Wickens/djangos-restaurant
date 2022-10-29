@@ -36,8 +36,8 @@ Djangos Book Table
     {% else %}
     {% csrf_token %}
     <h3>You must be logged in to book a table. If you don't have an account with us already, please Register. Otherwise please log in.</h3>
-    <a href="{% url 'account_signup' %}"><button class="btn-lg btn-outline-dark font-weight-bold">Login</button></a>
-    <a href="{% url 'account_login' %}"><button class="btn-lg btn-outline-dark font-weight-bold">Register</button></a>
+    <a href="{% url 'account_signup' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Login</button></a>
+    <a href="{% url 'account_login' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Register</button></a>
 
     {% endif %}
 </form>
