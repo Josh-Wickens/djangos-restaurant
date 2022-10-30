@@ -127,7 +127,11 @@ ___
 - The menu page has been filled through using a SQL database which stores the different dishes which are on the menu. The user can go on this page to find out what the restaurant has on the menu at the moment. The admin can update the menu whenever they want using the admin login. If a dish has run out or they no longer want to sell an unpopular dish then the admin can just delete that dish from the menu database and the website menu page will be updated. The menu page will only contain the menu and brief key to vegan and vegetarian choices. Keeping it to the point is part of my main goals of the website, so just having the menu on their is key to my design for the user.
 
 
-![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667164220/menu_page_ss_pkl2g4.png)
+![Image of menu](https://res.cloudinary.com/wickster/image/upload/v1667164220/menu_page_ss_pkl2g4.png)
+
+## Book Table Page
+
+- The book table page contains a form for the logged in user to be able to book a table at Djangos Restaurant. The form provides the user with a way to register names and contact numbers for the booking. As the table could be booked for business purposes etc. The user can decide what to the name the booking rather than name it after the individual. Contact details for the booking are also needed for the user so that there is contact details in case anything is wrong with the booking. 07 is defaulted on the phonenumber field to give the user a hint to use a mobile number for contact details, but it is not limited to as a home number can also be used.
 
 
 
