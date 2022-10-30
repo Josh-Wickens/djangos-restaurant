@@ -98,6 +98,8 @@ ___
 
 ## Home Page
 
+### Background Picture
+
 - Background picture was selected to give the user an automatic feel that they were on a restaurant site as you can clearly identify the table with bread and plant on it. It also give the website a brighter and lighter look/feel to it for the user.
 
 ### Nav Bar
@@ -118,6 +120,14 @@ ___
 - The footer provides contact information to the site user. The contact number and email address can be found in the footer. The email address is clickable so that the user can instantly contact the restaurant by just clicking/pressing the email address. This makes it user friendly and prevents the user from making a mistake when entering the email address of the restaurant when writing an email. There is also a link to my github so that they can see who owns the copyright to the website and to direct website users who are looking for who created the website. Location details have also been stated on the footer so that all contact details are together in one place for the user.
 
 ![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667164049/footer_ss_g2evko.png)
+
+
+## Menu Page
+
+- The menu page has been filled through using a SQL database which stores the different dishes which are on the menu. The user can go on this page to find out what the restaurant has on the menu at the moment. The admin can update the menu whenever they want using the admin login. If a dish has run out or they no longer want to sell an unpopular dish then the admin can just delete that dish from the menu database and the website menu page will be updated. The menu page will only contain the menu and brief key to vegan and vegetarian choices. Keeping it to the point is part of my main goals of the website, so just having the menu on their is key to my design for the user.
+
+
+![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667164220/menu_page_ss_pkl2g4.png)
 
 
 
