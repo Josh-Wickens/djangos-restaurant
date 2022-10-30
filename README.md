@@ -91,4 +91,34 @@ My wireframes was done using Justinmind. These are the pages and the original de
 ### My Bookings
 ![Image of wireframe my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-mybooking_vw1khe.png)
 
+___
+## **Features** 
+
+___
+
+## Home Page
+
+- Background picture was selected to give the user an automatic feel that they were on a restaurant site as you can clearly identify the table with bread and plant on it. It also give the website a brighter and lighter look/feel to it for the user.
+
+### Nav Bar
+- The nav bar provides the user with a way of navigating the website. Identifying which pages are clickable is made clear to the user with the change of colour when hovered. The nav bar stays at the top of the website so that no matter which page they are on, it will always be the first object in view. Nav bar also contains the website logo which is also clickable to access the home page. The nav bar has also been given a darker colour so that it stands out over the lighter background so that users can easily identify where the nav bar is when entering anypage. If the user isn't logged in, then the my bookings page will be replaced with a log in and register option in the nav bar. This prevents the user from accessing a blank my bookings page as bookings can only be made by users who are logged in. If the user is logged in, then the login and register pages are replaced by my bookings and log out navbar options.
+
+![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667162614/navbar-ss_tzg6fi.png)
+
+### Carousel
+
+- The carousel provides the user with an instant look as to what Djangos Restaurant looks like. The carousel automatically switches between 3 images. The carousel has been given a golden border to make it stand out further to the user against the light background. 
+
+### Description
+
+- There is a small description/info on the home page so that the user can instantly find out what this website is for and who it is for. It provides anyone if they are already users, never been to the restaurant, google searchers etc. with information regarding djangos so that they can make an instant decision as to whether or not to carry on browsing the website.
+
+### Footer
+
+- The footer provides contact information to the site user. The contact number and email address can be found in the footer. The email address is clickable so that the user can instantly contact the restaurant by just clicking/pressing the email address. This makes it user friendly and prevents the user from making a mistake when entering the email address of the restaurant when writing an email. There is also a link to my github so that they can see who owns the copyright to the website and to direct website users who are looking for who created the website. Location details have also been stated on the footer so that all contact details are together in one place for the user.
+
+![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667164049/footer_ss_g2evko.png)
+
+
+
 
