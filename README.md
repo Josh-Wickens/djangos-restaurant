@@ -92,7 +92,7 @@ My wireframes was done using Justinmind. These are the pages and the original de
 ![Image of wireframe my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-mybooking_vw1khe.png)
 
 ___
-## **Features** 
+## **Features & CRUD** 
 
 ___
 
@@ -131,7 +131,34 @@ ___
 
 ## Book Table Page
 
-- The book table page contains a form for the logged in user to be able to book a table at Djangos Restaurant. The form provides the user with a way to register names and contact numbers for the booking. As the table could be booked for business purposes etc. The user can decide what to the name the booking rather than name it after the individual. Contact details for the booking are also needed for the user so that there is contact details in case anything is wrong with the booking. 07 is defaulted on the phonenumber field to give the user a hint to use a mobile number for contact details, but it is not limited to as a home number can also be used.
+- The book table page contains a form for the logged in user to be able to book a table at Djangos Restaurant. The form provides the user with a way to register names and contact numbers for the booking. As the table could be booked for business purposes etc. The user can decide what to the name the booking rather than name it after the individual. Contact details for the booking are also needed for the user so that there is contact details in case anything is wrong with the booking. 07 is defaulted on the phonenumber field to give the user a hint to use a mobile number for contact details, but it is not limited to as a home number can also be used. A calendar widget has been introduced so that users can have a more user friendly way of selecting the date for the booking. The widget will produce a mini calander which will allow the user to see the days of the month and which days of the week they are. The check in time is also set to a choice option by the hour so that the user can choose the time instead of having to key it in using a keyboard where typing mistakes can be made. The book button will then figure out if the form is valid or not for saving, if the form is not valid, then it will provide the error to the user so that they can correct it. If the form is valid, then the book button will confirm the booking and redirect the user to the my bookings page so that they can then see that their booking is confirmed and in their bookings list.
+
+![Image of book a table page](https://res.cloudinary.com/wickster/image/upload/v1667166710/booktable_ss_f1wfdk.png)
+
+## My Bookings Page
+
+- The my booking page provides the user with an organised way of seeing their bookings. All bookings have been ordered in date order so that their earliest booking will be the 1st booking in the table so that they can prepare in order of booking dates. 
+- Amend booking button has also been provided so that user can update or amend their booking. This provides the user a way of changing any details of their booking, if that be change of date, time, people etc. The amend button will redirect the user to the edit booking page and prepopulate the form with their current booking details so that the form is prefilled and they can just update the section they want to update rather than it all again, this is so that the amend form is more user friendly and provide a better experience for the user.
+- The user also has the ability to delete/cancel their booking. If the user can no longer attend their booking, then they access their booking through the my bookings page and select the delete button. The button will at first open a model and ask the user if they are sure they want to delete the booking in case they had clicked on the button by accident and didn't want to loose their booking. 
+
+![Image of my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667167632/mybooking_ss_csmoy8.png)
+
+
+![Image of are you sure you want to delete model](https://res.cloudinary.com/wickster/image/upload/v1667167632/cancel_model_z5kshm.png)
+
+## Log in, out & Register Page
+
+### Log in
+- The log in page has been kept simple for the user to read. It provides a brief explanation as to why the user would like to log in (to be able to book tables and view their bookings). A username field and password field are the only inputs needed on the form to keep things simple and easy for the user to log in. If the the login credentials are incorrect, then a message will pop up on the form to inform the user that something is incorrect.
+
+![Image of my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667168488/login_ss_ampjqy.png)
+
+- Log out give the user a chance to change their mind before logging out as this could have been a mistake. If they have logged out, then the user will be notified by a message.
+
+- The register page has been kept simple for the user to register an account. They will only need to provide a username and password to create an account. Contact details are required for making bookings, so contact details are not needed at this point of interaction with the website. 
+
+
+
 
 
 
