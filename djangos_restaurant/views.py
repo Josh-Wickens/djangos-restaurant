@@ -8,10 +8,10 @@ def home(request):
     return render(request, 'index.html')
 
 
-@login_required()
-def book_table(request):
-    # return HttpResponse('Book a table')
-    return render(request, 'book_table.html')
+# @login_required()
+# def book_table(request):
+#     # return HttpResponse('Book a table')
+#     return render(request, 'book_table.html')
 
 
 # @login_required()

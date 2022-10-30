@@ -33,10 +33,10 @@ My Bookings
             <td>{{booking.guests}} </td>
             <td>{{booking.status}} </td>
             <td><a href="{% url 'edit' booking.reservation_id %}"><button class="btn btn-warning">Amend</button></a></td>
+            <!-- Button HTML (to Trigger Modal) -->
             <td><a href="#myModal" class="trigger-btn btn btn-danger" data-toggle="modal">Cancel</a></td>
             <div class="text-center">
-                <!-- Button HTML (to Trigger Modal) -->
-                <!-- <a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Confirm Modal</a> -->
+                
             </div>
             
             <!-- Modal HTML -->
@@ -44,11 +44,11 @@ My Bookings
                 <div class="modal-dialog modal-confirm">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Are you sure?</h4>	
+                            <h4 class="modal-title">Are you sure you want to cancel?</h4>	
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p>Do you really want to cancel this booking? This process cannot be undone.</p>
+                            <p>Do you really want to cancel this booking? Once cancelled, this process cannot be undone.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>

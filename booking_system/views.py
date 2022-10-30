@@ -57,7 +57,7 @@ def book_table(request):
                 check_in=booking.check_in,
                 date=booking.date, status="confirmed"))
 
-            if no_tables_booked >= 10:
+            if no_tables_booked >= 7:
                 messages.error(request, "Sorry there are no tables available at this time.")
 
             else:

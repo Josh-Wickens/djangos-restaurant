@@ -113,6 +113,12 @@ a {
     
 }
 
+.info-main {
+    background-image: radial-gradient(whitesmoke, whitesmoke, rgba(255, 0, 0, 0));
+   
+    
+}
+
 .navbar {
     border-bottom: solid 2px gold;
 }
