@@ -50,5 +50,45 @@ ___
 There are 3 databases made from models. 
 
 - Menu - This contains all the items on the food menu. This can be edited by the admin so that if a dish is taken off the menu then if they just remove from the database, this will then be removed from the website.
+
 - Table - This contains all the customer tables in the restaurant. This can be managed by the admin so that if the amount of tables increases then they can add them to the database or alternatively reduce the amount of tables.
-- Bookings - This contains all the bookings made by website users. This contains all the details of the bookings and can be managed by the admin to assign tables (from other database) to bookings.
+
+- Bookings - This contains all the bookings made by website users. This contains all the details of the bookings and can be managed by the admin to assign tables (from other database) to bookings. The User must be logged in to make a booking, so User is registered to the booking through the foreign key.
+
+![Image of model planning](https://res.cloudinary.com/wickster/image/upload/v1667159239/models_vi0z5g.png)
+___
+
+## Wireframes
+
+My wireframes was done using Justinmind. These are the pages and the original designs. They have since changed, but the simplification and limited text can be seen through the original wireframes.
+
+### nav bar pages
+![Image of wireframe login page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-1_b6lbj3.png)
+
+### Log in
+![Image of wireframe login page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-login_vngc75.png)
+
+
+
+### Register
+![Image of wireframe register page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-register_zyxn7l.png)
+
+
+
+
+### Home
+![Image of wireframe home page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-home_rtlncv.png)
+
+
+
+
+### Menu
+![Image of wireframe Menu page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-menu_vq4gxg.png)
+
+### Book Table
+![Image of wireframe Book Table page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-book_sn1xpa.png)
+
+### My Bookings
+![Image of wireframe my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-mybooking_vw1khe.png)
+
+
