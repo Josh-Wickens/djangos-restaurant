@@ -45,7 +45,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     name = models.CharField(max_length=40)
     email = models.EmailField()
-    phoneNumber = PhoneNumberField(null=False, blank=False, default="+44")
+    phoneNumber = models.CharField(max_length=12, null=False, blank=False, default="07")
     guests = models.IntegerField(
         default=1,
         validators=[
