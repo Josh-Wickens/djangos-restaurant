@@ -3,7 +3,6 @@ import datetime
 from datetime import timedelta
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
