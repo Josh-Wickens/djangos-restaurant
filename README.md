@@ -197,6 +197,11 @@ I have used a conbination of manual testing and automated testing.
 
 - I have tested the booking form with multiple invalid entried. I have tested using an email without a @ sign. This throws an error and prevents the user from submitting the form.
 
+- The restaurant holds 10 tables for reservations, I have tried testing to see if more than 10 bookings can be made for the same time and date. An error is raised if restaurant is full.
+
+![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667174129/full_ss_gp9cyo.png)
+
+
 - I have tested trying to input a date that is in the past. This throws and error and informs the user that they cannot select a date in the past.
 
 - I have tried to make a booking when not logged in. If the user isn't authenticated, then the form will be replaced with an option to login or register and inform the user they must be logged to make a booking. 
@@ -261,6 +266,8 @@ USER STORY: Create Authorization
 - Pages which should only be accessible by users who are logged in have been hidden from non logged in users. This has been tested by logging out and trying to access the my bookings page (which should not be accessible unless logged in). When not logged in the user cannot make a booking or access the my bookings page.
 
 ___
+
+## Bugs & Fixes
 
 
 
