@@ -23,21 +23,15 @@ Djangos Book Table
         
     {% csrf_token %}
     {{form.as_p}}
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
+    
 
 
     <button type="submit" class="btn-lg btn-outline-dark font-weight-bold">Book</button>
     {% else %}
     {% csrf_token %}
     <h3>You must be logged in to book a table. If you don't have an account with us already, please Register. Otherwise please log in.</h3>
-    <a href="{% url 'account_signup' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Login</button></a>
-    <a href="{% url 'account_login' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Register</button></a>
+    <a href="{% url 'account_login' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Login</button></a>
+    <a href="{% url 'account_signup' %}"><button type="button" class="btn-lg btn-outline-dark font-weight-bold">Register</button></a>
 
     {% endif %}
 </form>
