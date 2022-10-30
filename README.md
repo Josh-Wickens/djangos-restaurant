@@ -182,7 +182,7 @@ ___
 
 - The nav bar has been replaced with a drop down icon once screen size is smaller so that nav bar items aren't squished when using something like a phone device to access the website. This will make it more user friendly as the user can just open the drop down when they want to access another page in the website.
 
-![Image of my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667170823/navbar_dropdown_lvylxe.png)
+![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667170823/navbar_dropdown_lvylxe.png)
 
 
 ## Testing
@@ -196,6 +196,76 @@ I have used a conbination of manual testing and automated testing.
 - I have tried deleting, amending and adding items to the menu database. This in turn updates the webpage with the new or updated items.
 
 - I have tested the booking form with multiple invalid entried. I have tested using an email without a @ sign. This throws an error and prevents the user from submitting the form.
+
+- I have tested trying to input a date that is in the past. This throws and error and informs the user that they cannot select a date in the past.
+
+- I have tried to make a booking when not logged in. If the user isn't authenticated, then the form will be replaced with an option to login or register and inform the user they must be logged to make a booking. 
+
+- I have tried leaving the name blank. This provides an error and prevents the form submitting.
+
+- I have tested trying number of guests that is 0 or below and 5 or higher. This throws and error and inform the user that they need to submit a number between 1 and 4.
+
+![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667172158/guests_ss_yhyofg.png)
+
+- I have logged in as another user and can't see or access anyone else's bookings.
+
+- I have logged in as admin and tested that a user is linked to each individual booking. 
+
+- I have passed my code through the W3C Markup Validation Service for HTML & W3C CSS Validation Service.
+___
+
+## Epics
+
+USER STORY - Set Up Home Page
+
+- Testing has been done. The URL for the homepage works and the user can access the home page.
+
+USER STORY: Create Menu Page
+
+- Testing has been done and the URL for the menu page works, the user can access the page and view the information displayed on the page. The admin can edit the information on the menu by editing the database.
+
+USER STORY: Set up Admin
+
+- Admin has been set up as the superuser and can access and update information in the SQL database where the data for bookings, menu items, tables and users is stored.
+
+USER STORY: Add Menu Dishes to Database
+
+- Menu dishes have been added to the database by admin. This is now viewable to the user on the menu page.
+
+USER STORY: Register to Log in
+
+- Registration page has been set up so that user can register for an account. The user can set up the username and password and create a user.
+
+USER STORY: Log in
+
+- Tests have been done to see once registered if the user then uses those credentials that they can login. The login has been successful and a user can now log on to the website.
+
+USER STORY: Book a Table
+
+- Tests have been made to book a table. Form has been submitted and accessed the database throught the admin and can see that the booking has been confirmed and is showing in the database.
+
+USER STORY: Manage Booking Page
+
+- The user once signed in can access the my bookings page and access the bookings that they have made previously. Testing has been done and the user can see only bookings that the user has made and nobody else's bookings.
+
+USER STORY: Amend Booking
+
+- The user can access their bookings from the my bookings page, click the amend button and change data from their previously booked reservations. Testing has been done and the original booking has been amended and a new one hasn't been made. This is confirmed by the booking reference number not changing.
+
+USER STORY: Cancel Booking
+
+- The user can cancel a booking that has previously been made. A model will pop up to confirm booking in case the cancel button has been selected accidentily. Testing has been done and once confirmed, the booking has been deleted from the database.
+
+USER STORY: Create Authorization
+
+- Pages which should only be accessible by users who are logged in have been hidden from non logged in users. This has been tested by logging out and trying to access the my bookings page (which should not be accessible unless logged in). When not logged in the user cannot make a booking or access the my bookings page.
+
+___
+
+
+
+
+
 
 
 
