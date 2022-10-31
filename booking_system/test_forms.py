@@ -4,13 +4,6 @@ from .forms import ReserveTableForm
 
 # Create your tests here.
 
-# class TestDjango(SimpleTestCase):
-
-#     def test_this_thing_works(self):
-#         self.assertEqual(1, 0)
-
-
-# Forms
 class TestReserveForm(SimpleTestCase):
     def test_item_name_is_required(self):
         form = ReserveTableForm({'name': ''})

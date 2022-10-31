@@ -1,6 +1,7 @@
 from . import views
 from django.urls import path
 
+# Urls
 
 urlpatterns = [
     path('menu/', views.DishList.as_view(), name='menu'),

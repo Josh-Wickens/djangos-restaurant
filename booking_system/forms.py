@@ -5,10 +5,12 @@ from .models import Reservation
 import datetime
 from datetime import date
 
+# Sets choices by the hour between 18:00 and 24:00
 HOUR_CHOICES = [(datetime.time(hour=x), '{:02d}:00'.format(x)) for x in range(18, 24)]
 
 
 class ReserveTableForm(forms.ModelForm):
+    # Form to book a table
 
     def clean_date(self):
         date = self.cleaned_data['date']

@@ -10,11 +10,13 @@ Djangos Menu
         <h1>Djangos Menu</h1>
     </div>
     <div class="col-md-12 d-flex justify-content-center align-items-center subtitle">
-        <div class="info-main"><p><strong>
-                <span class="vegetarian">V</span> = Suitable for vegetarians.<br>
+        <div class="info-main">
+            <p><strong>
+                    <span class="vegetarian">V</span> = Suitable for vegetarians.<br>
 
-                <span class="vegan">VG</span> = Suitable for vegans.</strong></p>
-    </div></div>
+                    <span class="vegan">VG</span> = Suitable for vegans.</strong></p>
+        </div>
+    </div>
 </div>
 <div class="container menu-container info mb-4 p-3">
     <table style="width:100%">
@@ -23,7 +25,7 @@ Djangos Menu
                 <h2> STARTERS </h2>
             </th>
         </tr>
-
+<!--for loop that goes through the model with the menu and finds all the starters-->
         {% for dish in object_list %}
         {% if dish.food_type == "Starter" %}
         <tr>
@@ -40,7 +42,7 @@ Djangos Menu
                 <h2> MAINS </h2>
             </th>
         </tr>
-
+<!--for loop that goes through the model with the menu and finds all the Mains-->
         {% for dish in object_list %}
         {% if dish.food_type == "Mains" %}
         <tr>
@@ -57,7 +59,7 @@ Djangos Menu
                 <h2> DESERTS </h2>
             </th>
         </tr>
-
+<!--for loop that goes through the model with the menu and finds all the Desserts-->
         {% for dish in object_list %}
         {% if dish.food_type == "Dessert" %}
         <tr>

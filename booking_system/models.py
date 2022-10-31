@@ -6,6 +6,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+# Choices
+
 FOOD_TYPES = (
           ('Starter', 'Starter'),
           ('Mains', 'Mains'),
@@ -17,6 +19,8 @@ STATUS_CHOICES = (
     ('confirmed', 'confirmed'),
     ('expired', 'expired'),
 )
+
+# Model for the food menu
 
 
 class FoodMenu(models.Model):
@@ -30,6 +34,8 @@ class FoodMenu(models.Model):
     def __str__(self):
         return self.name
 
+# Model for the tables at the restaurant.
+
 
 class Table(models.Model):
     table_number = models.IntegerField(unique=True)
@@ -37,6 +43,8 @@ class Table(models.Model):
 
     def __str__(self):
         return f" Table No. - {self.table_number}"
+
+# Model for the bookings at the restaurant.
 
 
 class Reservation(models.Model):
@@ -62,6 +70,8 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"Ref No. {self.reservation_id} - {self.name}"
+
+# Meta sets the model data in date order
 
     class Meta:
         ordering = ['date']

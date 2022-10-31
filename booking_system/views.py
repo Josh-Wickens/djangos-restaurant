@@ -10,11 +10,15 @@ from django.contrib import messages
 
 # Create your views here.
 
+# Vew gets all the meals in the menu model
 
 class DishList(generic.ListView):
     model = FoodMenu
     queryset = FoodMenu.objects.all()
     template_name = 'menu.html'
+
+# Function view to get all the reservations made by the user
+# with the status confirmed for selected date.
 
 
 def booking_list(request):
@@ -32,6 +36,8 @@ def booking_list(request):
 
     return render(request, "my_bookings.html", context)
 
+# Gets the food menu and orders it by food type
+
 
 def FoodMenu(request):
     dishes = FoodMenu.objects.all().order_by('food_type')
@@ -43,6 +49,9 @@ def FoodMenu(request):
         'vegetarian': vegetarian,
         'vegan': vegan,
     }
+
+# Submiting the form on the book table page.
+# Checks if form is valid before saving the booking.
 
 
 def book_table(request):
@@ -57,7 +66,10 @@ def book_table(request):
                 check_in=booking.check_in,
                 date=booking.date, status="confirmed"))
 
-            if no_tables_booked >= 7:
+        # checks if the amount of bookings has reached
+        # the maximum amound of bookings for time and day
+
+            if no_tables_booked >= 10:
                 messages.error(request, "Sorry there are no tables available at this time.")
 
             else:
@@ -71,6 +83,9 @@ def book_table(request):
 
     return render(request, 'book_table.html', context)
 
+
+# View to edit the booking already made. Gets the details from the
+# reservation ID and prepopulates the form with the details from that ID.
 
 def edit_booking(request, reservation_id):
     booking = get_object_or_404(Reservation, reservation_id=reservation_id)
@@ -96,6 +111,9 @@ def edit_booking(request, reservation_id):
     reserve_form = ReserveTableForm(instance=booking)
     context = {'form': reserve_form}
     return render(request, 'edit_booking.html', context)
+
+# Function to get the booking using the reservation ID of the booking
+# Then deletes the reservation with that ID
 
 
 def delete_booking(request, reservation_id):

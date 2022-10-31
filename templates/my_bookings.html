@@ -24,6 +24,7 @@ My Bookings
     </thead>
     <tbody>
         <tr>
+            <!--Cycles through all the bookings for the user-->
             {% for booking in bookings %}
             <th scope="row">{{forloop.counter}}</th>
             <td>{{booking.reservation_id}} </td>
@@ -32,31 +33,34 @@ My Bookings
             <td>{{booking.check_in}} </td>
             <td>{{booking.guests}} </td>
             <td>{{booking.status}} </td>
-            <td><a href="{% url 'edit' booking.reservation_id %}"><button class="btn btn-warning">Amend</button></a></td>
+            <td><a href="{% url 'edit' booking.reservation_id %}"><button class="btn btn-warning">Amend</button></a>
+            </td>
             <!-- Button HTML (to Trigger Modal) -->
             <td><a href="#myModal" class="trigger-btn btn btn-danger" data-toggle="modal">Cancel</a></td>
             <div class="text-center">
-                
+
             </div>
-            
+
             <!-- Modal HTML -->
             <div id="myModal" class="modal fade">
                 <div class="modal-dialog modal-confirm">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Are you sure you want to cancel?</h4>	
+                            <h4 class="modal-title">Are you sure you want to cancel?</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p>Do you really want to cancel this booking? Once cancelled, this process cannot be undone.</p>
+                            <p>Do you really want to cancel this booking? Once cancelled, this process cannot be undone.
+                            </p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                            <a href="{% url 'delete' booking.reservation_id %}"> <button type="button" class="btn btn-danger">Cancel Booking</button></a>
+                            <a href="{% url 'delete' booking.reservation_id %}"> <button type="button"
+                                    class="btn btn-danger">Cancel Booking</button></a>
                         </div>
                     </div>
                 </div>
-            </div>     
+            </div>
         </tr>
 
         {% endfor %}
