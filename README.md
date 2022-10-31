@@ -2,7 +2,7 @@
 
 # [Click here to see deployed project](https://djangos-restaurant.herokuapp.com/) 
 
-Djangos Restaurant is a full-stack framwork project built using Django, Python, HTML, CSS and Javascript. The website is built for the purpose of Djangos restaurant goers being able to access the website to see the menu and sign in to be able to book tabels at the restaurant, read and manage their bookings. 
+Djangos Restaurant is a full-stack framework project built using Django, Bootstrap, Python, HTML, CSS and Javascript. The website is built for the purpose of Djangos restaurant goers being able to access the website to see the menu and sign in to be able to book tables at the restaurant, read, edit and delete their bookings. 
 
 
 ![Responsive image of Djangos Restaurant website](https://res.cloudinary.com/wickster/image/upload/v1667150103/am_i_reponsive_hmau9x.png)
@@ -16,18 +16,18 @@ The target audience for Djangos Restaurant are:
 - 25 - 40 year olds.
 - People with organised social lives.
 - People who like to see the details of meals they have booked.
-- People who have different dietry requirements such as Vegetarians and Vegans.
+- People who have specific dietry requirements such as Vegetarians and Vegans.
 
 ### User Goals
 - Navigate the website
 - Set up a log in to register as a user.
 - Make a reservation for a certain time and date at the restaurant.
-- See all my reservations in an organised manner.
+- See all their reservations in an organised manner.
 - Amend bookings that have been made by the user.
 - Cancel bookings made by the user.
 
 ### Site Owners Goals
-- Amend bookings if needs be. 
+- Amend bookings through the admin if situations arise where the user can't (e.g. User calls the restaurant). 
 - Edit the menu in the database.
 - Search through bookings to organise how busy restaurant will be.
 
@@ -43,22 +43,22 @@ The target audience for Djangos Restaurant are:
 - All navigation links work.
 - Once a booking has been made, I can see the details of that booking in a secure area.
 - Bookings can't be made unless logged in.
+- Only the logged in user can see their own bookings.
 
 
-
-Djangos restaurant are suited towards these target audiences because the website provides the user with easy navigation, so that anyone who uses a computer should be able to navigate around the website. It also provides the user with an easy way to manage their bookings, where they can access the information simply and edit without difficulty. It also provides users with up to date menus so that they can plan easily. The age group is also suited towards customers who would like to use their phone in order to manage their booking. The website provides a site that is responsive to groups who would like to manage all this on their phones.
+Djangos restaurant is suited towards these target audiences because the website provides the user with easy navigation, so that anyone who uses a computer should be able to navigate around the website. It also provides the user with an easy way to manage their bookings, where they can access the information simply and edit without difficulty. It also provides users with up to date menus so that they can plan easily. The age group is also suited towards customers who would like to use their phone in order to manage their booking. The website provides a site that is responsive to groups who would like to manage all this on their phones and on the go rather than only being able to book when setting time aside.
 ___
-### User Stories
-You can see my user stories through the link here.
+### User Stories - Agile Tools
+You can see my user stories through the link below.
 ### [Click here to see my User Stories](https://github.com/users/Josh-Wickens/projects/2/views/1) 
-![Image of model planning](https://res.cloudinary.com/wickster/image/upload/v1667181416/agile_working_ss_of9c5t.png)
+![Image of User Stories](https://res.cloudinary.com/wickster/image/upload/v1667181416/agile_working_ss_of9c5t.png)
 
 ___
 ## **Scope** ##
 
 The website will contain the folowing features:
 - A navbar which will navigate the website from home page to pages which you can only access when signed in.
-- A home page with a brief description of the restaurant and pictures.
+- A home page with a brief description of the restaurant and contains pictures.
 - A menu page which contains an up to date menu which will be updated through a database.
 - A booking page which will allow the user to make a reservation at the restaurant pending on availability.
 - A manage booking page which will provide the user with a table of all their bookings which are due at the restaurant.
@@ -77,7 +77,7 @@ The website has been made with little text as to not deter the user away from wh
 ___
 ## Surface
 
-I chose a background that would be associated with a restaurant. The bright table with bread gives the website a restaurant/food kind of vibe. To go with the light background, a darker colour was chosen for text, navbar and footer so that they would stand out more on the background. Bootstraps dark class was selected for navbar and footer. 
+I chose a background that would be associated with a restaurant. The bright table with bread gives the website a restaurant/food kind of vibe. To go with the light background, a darker colour was chosen for text, navbar and footer so that they would stand out more on the background. Bootstraps dark class was selected for navbar and footer as this was perfect for the colour scheme I wanted. 
 ___
 ## Databases
 
@@ -87,16 +87,18 @@ There are 3 databases made from models.
 
 - Table - This contains all the customer tables in the restaurant. This can be managed by the admin so that if the amount of tables increases then they can add them to the database or alternatively reduce the amount of tables.
 
-- Bookings - This contains all the bookings made by website users. This contains all the details of the bookings and can be managed by the admin to assign tables (from other database) to bookings. The User must be logged in to make a booking, so User is registered to the booking through the foreign key.
+- Bookings - This contains all the bookings made by website users. This contains all the details of the bookings and can be managed by the admin to assign tables (from other database) to bookings. The User must be logged in to make a booking, so User is registered to the booking through the foreign key. The admin can also create bookings if customers have booked over the phone or by email.
 
-![Image of agile working](https://res.cloudinary.com/wickster/image/upload/v1667159239/models_vi0z5g.png)
+see image below for Model planning. 
+
+![Image of model planning](https://res.cloudinary.com/wickster/image/upload/v1667159239/models_vi0z5g.png)
 ___
 
 ## Wireframes
 
 My wireframes was done using Justinmind. These are the pages and the original designs. They have since changed, but the simplification and limited text can be seen through the original wireframes.
 
-### nav bar pages
+### Nav Bar Pages
 ![Image of wireframe Navbar](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-1_b6lbj3.png)
 
 ### Log in
@@ -137,7 +139,7 @@ ___
 - Background picture was selected to give the user an automatic feel that they were on a restaurant site as you can clearly identify the table with bread and plant on it. It also give the website a brighter and lighter look/feel to it for the user.
 
 ### Nav Bar
-- The nav bar provides the user with a way of navigating the website. Identifying which pages are clickable is made clear to the user with the change of colour when hovered. The nav bar stays at the top of the website so that no matter which page they are on, it will always be the first object in view. Nav bar also contains the website logo which is also clickable to access the home page. The nav bar has also been given a darker colour so that it stands out over the lighter background so that users can easily identify where the nav bar is when entering anypage. If the user isn't logged in, then the my bookings page will be replaced with a log in and register option in the nav bar. This prevents the user from accessing a blank my bookings page as bookings can only be made by users who are logged in. If the user is logged in, then the login and register pages are replaced by my bookings and log out navbar options.
+- The nav bar provides the user with a way of navigating the website. Identifying which pages are clickable is made clear to the user with the change of colour when hovered. The nav bar stays at the top of the website so that no matter which page they are on, it will always be the first element in view. Nav bar also contains the website logo which is also clickable to access the home page. The nav bar has also been given a darker colour so that it stands out over the lighter background so that users can easily identify where the nav bar is when entering any page. If the user isn't logged in, then the my bookings page will be replaced with a log in and register option in the nav bar. This prevents the user from accessing a blank my bookings page as bookings can only be made by users who are logged in. If the user is logged in, then the login and register pages are replaced by my bookings and log out navbar options.
 
 ![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667162614/navbar-ss_tzg6fi.png)
 
@@ -158,14 +160,14 @@ ___
 
 ## Menu Page
 
-- The menu page has been filled through using a SQL database which stores the different dishes which are on the menu. The user can go on this page to find out what the restaurant has on the menu at the moment. The admin can update the menu whenever they want using the admin login. If a dish has run out or they no longer want to sell an unpopular dish then the admin can just delete that dish from the menu database and the website menu page will be updated. The menu page will only contain the menu and brief key to vegan and vegetarian choices. Keeping it to the point is part of my main goals of the website, so just having the menu on their is key to my design for the user.
+- The menu page has been populated through using an SQL database which stores the different dishes which are on the menu. The user can go on this page to find out what the restaurant has on the menu at the moment. The admin can update the menu whenever they want using the admin login. If a dish has run out or they no longer want to sell an unpopular dish then the admin can just delete that dish from the menu database and the website menu page will be updated. The menu page will only contain the menu and brief key to vegan and vegetarian choices. Keeping it to the point is part of my main goals of the website, so just having the menu on there is key to my design for the user.
 
 
 ![Image of menu](https://res.cloudinary.com/wickster/image/upload/v1667164220/menu_page_ss_pkl2g4.png)
 
 ## Book Table Page
 
-- The book table page contains a form for the logged in user to be able to book a table at Djangos Restaurant. The form provides the user with a way to register names and contact numbers for the booking. As the table could be booked for business purposes etc. The user can decide what to the name the booking rather than name it after the individual. Contact details for the booking are also needed for the user so that there is contact details in case anything is wrong with the booking. 07 is defaulted on the phonenumber field to give the user a hint to use a mobile number for contact details, but it is not limited to as a home number can also be used. A calendar widget has been introduced so that users can have a more user friendly way of selecting the date for the booking. The widget will produce a mini calander which will allow the user to see the days of the month and which days of the week they are. The check in time is also set to a choice option by the hour so that the user can choose the time instead of having to key it in using a keyboard where typing mistakes can be made. The book button will then figure out if the form is valid or not for saving, if the form is not valid, then it will provide the error to the user so that they can correct it. If the form is valid, then the book button will confirm the booking and redirect the user to the my bookings page so that they can then see that their booking is confirmed and in their bookings list. A message will also appear at the top to inform the user that their booking has been confirmed.
+- The book table page contains a form for the logged in user to be able to book a table at Djangos Restaurant. The form provides the user with a way to register names and contact numbers for the booking. As the table could be booked for business purposes etc. The user can decide what to name the booking rather than name it after the individual. Contact details for the booking are also needed for the user so that there is contact details provided to the restaurant in case anything is wrong with the booking. 07 is defaulted on the phonenumber field to give the user a hint to use a mobile number for contact details, but it is not limited to as a home number can also be used. A calendar widget has been introduced so that users can have a more user friendly way of selecting the date for the booking. The widget will produce a mini calander which will allow the user to see the days of the month and which days of the week they are. The check in time is also set to a choice option by the hour so that the user can choose the time instead of having to key it in using a keyboard where typing mistakes can be made. The book button will then figure out if the form is valid or not for saving, if the form is not valid, then it will provide the error to the user so that they can correct it. If the form is valid, then the book button will confirm the booking and redirect the user to the my bookings page so that they can then see that their booking is confirmed and in their bookings list. A message will also appear at the top to inform the user that their booking has been confirmed.
 
 ![Image of book a table page](https://res.cloudinary.com/wickster/image/upload/v1667166710/booktable_ss_f1wfdk.png)
 
@@ -199,11 +201,12 @@ ___
 - Seating plan so that customers using the booking system could also pick which table they would like to sit at based on location.
 - Pre-order meals so that they can select what they want in advance and so that they can order items before they are taken off the menu.
 - If multiple restaurants in the chain, then can select restaurant from location.
+- An app so that Users could open an app to manage their bookings rather than have to go on the website.
 
 ___
 ## Technologies Used
 
-### Languages, Frameworks, Fonts etc.
+### Languages & Frameworks
 - HTML, CSS, JavaScript, Python - Languages used.
 - Django - Framework used for project.
 - Bootstrap - Used for design and responsive design.
@@ -212,7 +215,7 @@ ___
 - Heroku - Used to deploy application.
 - Cloudinary - To store images.
 - PostgreSQL - To store model data.
-- Justinmind - for wireframes and design.
+- Justinmind - For wireframes and design.
 
 ___
 
@@ -224,14 +227,14 @@ ___
 
 - Bootstrap has been added to the table on my bookings so that a scrolling bar will be added once the screen size is smaller instead of squeezing the data. 
 
-- The nav bar has been replaced with a drop down icon once screen size is smaller so that nav bar items aren't squished when using something like a phone device to access the website. This will make it more user friendly as the user can just open the drop down when they want to access another page in the website.
+- The nav bar has been replaced with a drop down icon once screen size is smaller so that nav bar items aren't squished when using something like a phone device to access the website. This will make it more user friendly as the user can just open the drop down when they want to access another page on the website.
 
 ![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667170823/navbar_dropdown_lvylxe.png)
 
 
 ## Testing
 
-I have used a conbination of manual testing and automated testing. 
+I have used a combination of manual testing and automated testing. 
 
 - Email link on homepage opens up an email app once clicked and prepopulates the email address.
 
@@ -239,9 +242,9 @@ I have used a conbination of manual testing and automated testing.
 
 - I have tried deleting, amending and adding items to the menu database. This in turn updates the webpage with the new or updated items.
 
-- I have tested the booking form with multiple invalid entried. I have tested using an email without a @ sign. This throws an error and prevents the user from submitting the form.
+- I have tested the booking form with multiple invalid entries. I have tested using an email without a @ sign. This throws an error and prevents the user from submitting the form.
 
-- The restaurant holds 10 tables for reservations, I have tried testing to see if more than 10 bookings can be made for the same time and date. An error is raised if restaurant is full.
+- The restaurant holds 10 tables for reservations, I have tried testing to see if more than 10 bookings can be made for the same time and date. An error is raised if the amount of bookings is full for that date and time.
 
 ![Image of Restaurant full error](https://res.cloudinary.com/wickster/image/upload/v1667174129/full_ss_gp9cyo.png)
 
@@ -260,7 +263,7 @@ I have used a conbination of manual testing and automated testing.
 
 - I have logged in as admin and tested that a user is linked to each individual booking. 
 
-- I have passed my code through the W3C Markup Validation Service for HTML & W3C CSS Validation Service & Jshint for Javascript. All successfully passed.
+- I have passed my code through the W3C Markup Validation Service for HTML & W3C CSS Validation Service & Jshint for Javascript. All successfully passed with 0 errors.
 ___
 
 ## Epics
@@ -279,7 +282,7 @@ USER STORY: Set up Admin
 
 USER STORY: Add Menu Dishes to Database
 
-- Menu dishes have been added to the database by admin. This is now viewable to the user on the menu page.
+- Menu dishes have been added to the database by admin. This is now viewable to the user on the menu page and editable for the admin.
 
 USER STORY: Register to Log in
 
@@ -287,11 +290,11 @@ USER STORY: Register to Log in
 
 USER STORY: Log in
 
-- Tests have been done to see once registered if the user then uses those credentials that they can login. The login has been successful and a user can now log on to the website.
+- Tests have been done to see that once registered if the user then uses those credentials that they can login. The login has been successful and a user can now log on to the website.
 
 USER STORY: Book a Table
 
-- Tests have been made to book a table. Form has been submitted and accessed the database throught the admin and can see that the booking has been confirmed and is showing in the database.
+- Tests have been made to book a table. Form has been submitted and accessed the database through the admin and can see that the booking has been confirmed and is showing in the database.
 
 USER STORY: Manage Booking Page
 
@@ -349,6 +352,10 @@ CLOUDINARY_URL - to be set to your Cloudinary API environment variable.
 - Connect your Heroku app to your GitHub Repository: click on depoy and select GitHub-Connect to GitHub. Search for GitHub Repository name, then connect.
 - Then deploy branch by going to the deploy tab and scrolling down to the deploy branch button and clicking the button.
 - once deployment is complete, you can then open app. 
+
+### Everything was followed using the Code Institute deployment cheatsheet
+
+[Django Deployment Cheatsheet](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
 
 ___
 
