@@ -18,11 +18,41 @@ The target audience for Djangos Restaurant are:
 - People who like to see the details of meals they have booked.
 - People who have different dietry requirements such as Vegetarians and Vegans.
 
+### User Goals
+- Navigate the website
+- Set up a log in to register as a user.
+- Make a reservation for a certain time and date at the restaurant.
+- See all my reservations in an organised manner.
+- Amend bookings that have been made by the user.
+- Cancel bookings made by the user.
+
+### Site Owners Goals
+- Amend bookings if needs be. 
+- Edit the menu in the database.
+- Search through bookings to organise how busy restaurant will be.
+
+
+### requirements
+- Easy navigation
+- Minimal text to highlight features rather than reading.
+- Easy to read, edit and delete bookings for user.
+- Organised view of bookings
+
+### Expectations
+- When clicking on links, expect the page to open in a separate browser.
+- All navigation links work.
+- Once a booking has been made, I can see the details of that booking in a secure area.
+- Bookings can't be made unless logged in.
+
+
+
 Djangos restaurant are suited towards these target audiences because the website provides the user with easy navigation, so that anyone who uses a computer should be able to navigate around the website. It also provides the user with an easy way to manage their bookings, where they can access the information simply and edit without difficulty. It also provides users with up to date menus so that they can plan easily. The age group is also suited towards customers who would like to use their phone in order to manage their booking. The website provides a site that is responsive to groups who would like to manage all this on their phones.
 ___
 ### User Stories
 You can see my user stories through the link here.
 ### [Click here to see my User Stories](https://github.com/users/Josh-Wickens/projects/2/views/1) 
+![Image of model planning](https://res.cloudinary.com/wickster/image/upload/v1667181416/agile_working_ss_of9c5t.png)
+
 ___
 ## **Scope** ##
 
@@ -45,6 +75,10 @@ The website has been made with little text as to not deter the user away from wh
 - Book Table to make bookings
 - My Bookings to manage already made bookings.
 ___
+## Surface
+
+I chose a background that would be associated with a restaurant. The bright table with bread gives the website a restaurant/food kind of vibe. To go with the light background, a darker colour was chosen for text, navbar and footer so that they would stand out more on the background. Bootstraps dark class was selected for navbar and footer. 
+___
 ## Databases
 
 There are 3 databases made from models. 
@@ -55,7 +89,7 @@ There are 3 databases made from models.
 
 - Bookings - This contains all the bookings made by website users. This contains all the details of the bookings and can be managed by the admin to assign tables (from other database) to bookings. The User must be logged in to make a booking, so User is registered to the booking through the foreign key.
 
-![Image of model planning](https://res.cloudinary.com/wickster/image/upload/v1667159239/models_vi0z5g.png)
+![Image of agile working](https://res.cloudinary.com/wickster/image/upload/v1667159239/models_vi0z5g.png)
 ___
 
 ## Wireframes
@@ -63,7 +97,7 @@ ___
 My wireframes was done using Justinmind. These are the pages and the original designs. They have since changed, but the simplification and limited text can be seen through the original wireframes.
 
 ### nav bar pages
-![Image of wireframe login page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-1_b6lbj3.png)
+![Image of wireframe Navbar](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-1_b6lbj3.png)
 
 ### Log in
 ![Image of wireframe login page](https://res.cloudinary.com/wickster/image/upload/v1667160304/wireframe-login_vngc75.png)
@@ -119,7 +153,7 @@ ___
 
 - The footer provides contact information to the site user. The contact number and email address can be found in the footer. The email address is clickable so that the user can instantly contact the restaurant by just clicking/pressing the email address. This makes it user friendly and prevents the user from making a mistake when entering the email address of the restaurant when writing an email. There is also a link to my github so that they can see who owns the copyright to the website and to direct website users who are looking for who created the website. Location details have also been stated on the footer so that all contact details are together in one place for the user.
 
-![Image of nav bar](https://res.cloudinary.com/wickster/image/upload/v1667164049/footer_ss_g2evko.png)
+![Image of footer](https://res.cloudinary.com/wickster/image/upload/v1667164049/footer_ss_g2evko.png)
 
 
 ## Menu Page
@@ -152,23 +186,33 @@ ___
 ### Log in
 - The log in page has been kept simple for the user to read. It provides a brief explanation as to why the user would like to log in (to be able to book tables and view their bookings). A username field and password field are the only inputs needed on the form to keep things simple and easy for the user to log in. If the the login credentials are incorrect, then a message will pop up on the form to inform the user that something is incorrect.
 
-![Image of my bookings page](https://res.cloudinary.com/wickster/image/upload/v1667168488/login_ss_ampjqy.png)
+![Image of my login page](https://res.cloudinary.com/wickster/image/upload/v1667168488/login_ss_ampjqy.png)
 
 - Log out give the user a chance to change their mind before logging out as this could have been a mistake. If they have logged out, then the user will be notified by a message.
 
 - The register page has been kept simple for the user to register an account. They will only need to provide a username and password to create an account. Contact details are required for making bookings, so contact details are not needed at this point of interaction with the website. 
 
 ___
+## Future Features
+
+- Live chat with the restaurant to discuss details regarding bookings or logins etc.
+- Seating plan so that customers using the booking system could also pick which table they would like to sit at based on location.
+- Pre-order meals so that they can select what they want in advance and so that they can order items before they are taken off the menu.
+- If multiple restaurants in the chain, then can select restaurant from location.
+
+___
 ## Technologies Used
 
 ### Languages, Frameworks, Fonts etc.
 - HTML, CSS, JavaScript, Python - Languages used.
-- Django - Framework used for project
+- Django - Framework used for project.
 - Bootstrap - Used for design and responsive design.
+- allauth - for restricted access.
 - GitHub - Used to store project.
 - Heroku - Used to deploy application.
 - Cloudinary - To store images.
--PostgreSQL - To store model data.
+- PostgreSQL - To store model data.
+- Justinmind - for wireframes and design.
 
 ___
 
@@ -199,7 +243,7 @@ I have used a conbination of manual testing and automated testing.
 
 - The restaurant holds 10 tables for reservations, I have tried testing to see if more than 10 bookings can be made for the same time and date. An error is raised if restaurant is full.
 
-![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667174129/full_ss_gp9cyo.png)
+![Image of Restaurant full error](https://res.cloudinary.com/wickster/image/upload/v1667174129/full_ss_gp9cyo.png)
 
 
 - I have tested trying to input a date that is in the past. This throws and error and informs the user that they cannot select a date in the past.
@@ -210,13 +254,13 @@ I have used a conbination of manual testing and automated testing.
 
 - I have tested trying number of guests that is 0 or below and 5 or higher. This throws and error and inform the user that they need to submit a number between 1 and 4.
 
-![Image of my responsive design navbar](https://res.cloudinary.com/wickster/image/upload/v1667172158/guests_ss_yhyofg.png)
+![Image of guest amount error](https://res.cloudinary.com/wickster/image/upload/v1667172158/guests_ss_yhyofg.png)
 
 - I have logged in as another user and can't see or access anyone else's bookings.
 
 - I have logged in as admin and tested that a user is linked to each individual booking. 
 
-- I have passed my code through the W3C Markup Validation Service for HTML & W3C CSS Validation Service.
+- I have passed my code through the W3C Markup Validation Service for HTML & W3C CSS Validation Service & Jshint for Javascript. All successfully passed.
 ___
 
 ## Epics
@@ -317,24 +361,38 @@ ___
 - https://django-filter.readthedocs.io/en/stable/guide/usage.html
 - https://docs.djangoproject.com/
 - TimeField choices - https://stackoverflow.com/questions/51164326/how-can-i-add-choices-to-a-timefield-in-a-django-form
+- Responsive design tables in bootstrap - https://stackoverflow.com/questions/51164326/how-can-i-add-choices-to-a-timefield-in-a-django-form#
+- Navbar & Footers with bootstrap - https://mdbootstrap.com/
 
 
-Font recomendation:
+### Font recomendation
 https://inkbotdesign.com/font-combinations/ & https://www.fontpair.co/all
 
-All images are from Pexels.com - https://www.pexels.com/photo/person-holding-bowl-2403392/
+### All images are from Pexels.com 
+https://www.pexels.com/photo/person-holding-bowl-2403392/
 
-Bootstrap Model is based from tutorialpublic.com - https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=delete-confirmation-modal
+### Bootstrap Model is based from tutorialpublic.com 
+https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=delete-confirmation-modal
+
+### Bootstrap Carousel 
+https://getbootstrap.com/docs/4.5/components/carousel/
 
 ### Youtube Help
 
 Django Tutorials:
 
-https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj#
+- https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj#
+- https://www.youtube.com/playlist?list=PLOLrQ9Pn6caxNb9eFZJ6LfY29nZkKmmXT
+- https://www.youtube.com/playlist?list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc
+
+
 
 ### GitHub Help
 
 https://codeinstitute.net/student-projects/
+
+
+### Tutor Support
 
 
 
