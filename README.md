@@ -284,6 +284,60 @@ ___
 ___
 
 
+## Deployment
+
+### Deploying to GitHub
+
+- Using the Codeinstitute template - click the use this template button.
+- create a repository name.
+- click the create repository from template to create it.
+- click GitPod button.
+- to commit any change use: git add . to add files to staging area. git commit -m "commit message" commits changes to local repository. git push pushes commits to GitHub repository.
+
+### Deploying to Heroku
+- go to https://www.heroku.com/
+- Create a new app and select a region.
+- go to add ons to add Heroky Postgres.
+- go to settings tab.
+- In the Settings tab, click on Reveal Config Vars and set the following variables:
+SECRET_KEY - to be set to your chosen key
+CLOUDINARY_URL - to be set to your Cloudinary API environment variable.
+- Connect your Heroku app to your GitHub Repository: click on depoy and select GitHub-Connect to GitHub. Search for GitHub Repository name, then connect.
+- Then deploy branch by going to the deploy tab and scrolling down to the deploy branch button and clicking the button.
+- once deployment is complete, you can then open app. 
+
+___
+
+## Credits
+
+### Websites
+
+- https://stackoverflow.com/
+- https://www.w3schools.com/
+- https://django-filter.readthedocs.io/en/stable/guide/usage.html
+- https://docs.djangoproject.com/
+- TimeField choices - https://stackoverflow.com/questions/51164326/how-can-i-add-choices-to-a-timefield-in-a-django-form
+
+
+Font recomendation:
+https://inkbotdesign.com/font-combinations/ & https://www.fontpair.co/all
+
+All images are from Pexels.com - https://www.pexels.com/photo/person-holding-bowl-2403392/
+
+Bootstrap Model is based from tutorialpublic.com - https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=delete-confirmation-modal
+
+### Youtube Help
+
+Django Tutorials:
+
+https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj#
+
+### GitHub Help
+
+https://codeinstitute.net/student-projects/
+
+
+
 
 
 
