@@ -216,6 +216,7 @@ ___
 - Cloudinary - To store images.
 - PostgreSQL - To store model data.
 - Justinmind - For wireframes and design.
+- https://favicon.io/favicon-generator/ - For design of favicon
 
 ___
 
@@ -327,6 +328,8 @@ ___
 ![Image of my bug on amount of bookings](https://res.cloudinary.com/wickster/image/upload/v1667175190/full_bug_qfmnsb.png)
 
 - When trying to change a booking status to expired through python logic. I managed to change the status on the html for the user but this was not changing on the database. I added in some code that would change the status then save the new status on the database before adding the code to delete if status = expired.
+
+- After some friends had tested my website. 2 of them said that when they registered that they received an error 500. I have ran tests since then and could not reproduce the error. They said this happened when registering. I have tested this on desktop as well as mobile and still could not reproduce this error. All other users were able to register successfully. I have ran through this with Tutor Support and they also were able to register successfully. 
 
 ___
 
