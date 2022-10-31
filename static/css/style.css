@@ -210,7 +210,7 @@ a {
     }
     .small-screen-image {
         display: block;
-        height: 100px;
+        height: 200px;
         width: auto;
     }
 }
