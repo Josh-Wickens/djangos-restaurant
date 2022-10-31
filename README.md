@@ -269,7 +269,19 @@ ___
 
 ## Bugs & Fixes
 
+- When trying to do an if statement on my menu page. I had a bug which was preventing the if from checking the statement of checking if the vegan boolean was true or not. This was resolved by taking away the quotation marks as this was trying to imply the string True rather than the booleon value.
 
+![Image of my bug on if statement for boolean field](https://res.cloudinary.com/wickster/image/upload/v1667174556/string_bug_v9hxvf.png)
+
+- Trying to set the date field was having a problem with the date order and would often cause a valadation error as the date order would be incorrect. I resolved this bug by adding a calendar widget in the form.py instead so that the user could click the date rather than figure out the input.
+
+- Had a bug where the form was supposed to figure out if the restaurant was full on a selected day and time. It was causing a bug to prevent the port from opening. I figured out that an error had been made that i was looking to see if the amount of bookings was the same as well as the same or more. I resolved it by getting rid of the ==. This meant it would now just check if it was the same or higher.
+
+![Image of my bug on amount of bookings](https://res.cloudinary.com/wickster/image/upload/v1667175190/full_bug_qfmnsb.png)
+
+- When trying to change a booking status to expired through python logic. I managed to change the status on the html for the user but this was not changing on the database. I added in some code that would change the status then save the new status on the database before adding the code to delete if status = expired.
+
+___
 
 
 
